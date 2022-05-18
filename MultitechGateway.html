@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mulititech Hex</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<link rel="shortcut icon" type="image/png" href="./mul_rgb.png" />
+		<script type="text/javascript">
+			function formatX(){
+				s =document.getElementById("GW").value;
+				var res = "";
+				for(var i = 0; i < s.length; i+=2)
+				{
+				  res += "0x" + s.charAt(i) + (i + 1 <= s.length ? s.charAt(i + 1) : 0) +  (i + 1 >= s.length - 1 ? "" : ", ");
+				}
+
+				document.getElementById('SR').innerHTML = res;
+			}
+		</script>
+		
+		<style>
+			 /* unvisited link */
+			a:link {
+			  color: #b9b9b9;
+			}
+
+			/* visited link */
+			a:visited {
+			  color: #b9b9b9;
+			}
+
+			/* mouse over link */
+			a:hover {
+			  color: #0071cd;
+			}
+
+			/* selected link */
+			a:active {
+			  color: #b9b9b9;
+			} 
+		</style>
+	</head>
+	<body onload="formatX()">
+		<center>
+		<div style="width: 420px;">
+			<img src="./mul.png" style="width: 300px;margin-top:20px;margin-bottom:20px;"></img>
+			<h3 style="color: #b9b9b9;">Hex for Mulititech Gateway</h3>
+			<h6 style="color: #757575; padding-left:300px;margin-top:-15px;">By Network-Lab</h6>
+			
+			<input id="GW" name="Gateway" type="text" oninput="formatX()" placeholder="Insert your payload" value="" autofocus style="width: 400px;text-align: center;" />
+			<br><br>
+			<textarea id="SR" name="Sresult" value="0x00" style="width: 400px;height: 55px;text-align: center;"></textarea> 
+			<br>
+			<!-- <button onclick="formatX()">Convert</button> -->
+			<h6 style="color: #757575; "><a href="http://www.network-Lab.eu" >Network-Lab.eu</a></h6>
+		</div>
+		</center>
+	</body>
+</html>
